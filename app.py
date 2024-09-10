@@ -10,16 +10,11 @@ import matplotlib.pyplot as plt
 from datetime import datetime
 
 
-
-
-# Variáveis para armazenar gastos e economias
 gastos = []
 economias = []
 
 
 
-
-# Lista de transações
 transacoes = [
     {'tipo': 'depósito', 'valor': 1800, 'categoria': 'trabalho', 'dia': 15, 'mes': '01', 'ANO': '2022'},
     {'tipo': 'saque', 'valor': 650, 'categoria': 'alimentação', 'dia': 5, 'mes': '03', 'ANO': '2023'},
@@ -29,9 +24,6 @@ transacoes = [
 ]
 
 
-
-
-# Função para registrar transações em uma nova janela
 def registrar_transacoes():
     nova_janela = tk.Toplevel(app)
     nova_janela.title('Registrar Transação')
@@ -126,7 +118,6 @@ def registrar_transacoes():
 
 
 
-# Função para exibir um relatório
 def relatorio():
     nova_janela = tk.Toplevel(app)
     nova_janela.title('Exibir Relatório')
@@ -147,8 +138,6 @@ def relatorio():
 
 
 
-
-   # Função para exibir um relatório
 def relatorio():
     nova_janela = tk.Toplevel(app)
     nova_janela.title('Exibir Relatório')
@@ -182,8 +171,6 @@ nova_janela_relatorio = None
 
 
 
-
-# Função para exibir um relatório
 def relatorio():
     global escolha_var, nova_janela_relatorio
     nova_janela_relatorio = tk.Toplevel(app)
@@ -284,7 +271,6 @@ def saldo_atual():
 
 
 
-# Função para calcular estatísticas
 def calcular_estatisticas():
     # Inicializar dicionários para acompanhar gastos por categoria e a maior despesa
     gastos_por_categoria = {}
@@ -293,8 +279,6 @@ def calcular_estatisticas():
 
 
 
-
-    # Iterar sobre as transações
     for transacao in transacoes:
         tipo = transacao['tipo']
         categoria = transacao['categoria']
@@ -303,9 +287,8 @@ def calcular_estatisticas():
 
 
 
-        # Verificar se é uma despesa ou um ganho
+     
         if tipo == 'saque':
-            # Atualizar gastos por categoria
             if categoria in gastos_por_categoria:
                 gastos_por_categoria[categoria] += valor
             else:
@@ -314,7 +297,7 @@ def calcular_estatisticas():
 
 
 
-            # Verificar se esta é a maior despesa
+
             if valor > maior_despesa['valor']:
                 maior_despesa['valor'] = valor
                 maior_despesa['transacao'] = transacao
